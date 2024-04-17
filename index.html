@@ -1,0 +1,116 @@
+
+<!doctype html>
+<html>
+<head>
+
+<title>proyecto 001</title>
+
+
+</head>
+<body>
+
+<div class="container">
+
+<h3 id="numer">Toca el boton para generar una oracion random.</h3>
+
+</div>
+
+<div class="orden">
+
+<button id="boton">Generar oracion</button>
+
+</div>
+
+
+<style>
+
+*{
+    margin:0;
+    overflow:hidden;
+}
+
+body{
+    background-color: #111;
+    font-family: lemon,"sans";
+}
+
+.container{
+    background-color:#222;
+    width:95%;
+    height:200px;
+    border: 2px solid #333;
+    border-radius:10px;
+    margin-left:2%;
+    margin-top:10%;
+    position:absolute;
+}
+
+.orden{
+    margin-top:70%;
+    margin-left:20%;
+}
+
+#numer{
+    color:white;
+    margin-left:8px;
+    margin-top:10px;
+    position:absolute;
+    animation: text 2s linear infinite;
+}
+
+#boton{
+    width:80%;
+    height:50px;
+  
+   
+    
+    color:white;
+    -webkit-text-stroke:0.55px black;
+  
+    --color: blue;
+     --dark-color: color-mix(in srgb, var(--color), black 25%); --light-color: color-mix(in srgb, var(--color), white 25%); border: 1px solid var(--dark-color); border-bottom-width: 8px; border-top-color: var(--light-color); background: var(--color); color: #fff; font-family: Jost, sans-serif; font-size: 1.2rem; padding: 0.25rem 0.75rem; transition: transform 0.2s, border 0.2s; &:active { border-bottom-width: 1px;
+      transform: translateY(7px); background: var(--dark-color); }
+        
+}
+
+@keyframes text{
+    0%{
+        color:white;
+    }45%,55%{
+        color:gray;
+    }90%,100%{
+        color:darkgray;
+    }
+}
+
+@keyframes boton{
+    0%{
+        background-color:blue;
+      
+    }45%,55%{
+        background-color:darkblue;
+    }90%,100%{
+        background-color:blue;
+    }
+}
+
+</style>
+
+<script>
+const numer=document.getElementById("numer");
+const boton=document.getElementById("boton");
+
+boton.addEventListener("click",() => {
+    
+    const palabras= ["I was eating a hot dog,it is very yummy,my parents are eating burguers and my brother is eating meet,there wasn't electricity,There was water but it was very dark,I was sleeping and My brother wasn't sleeping","I am planning on taking a trip to Europe next summer, and I am wondering if you have any recommendations for places to visit.","Although I understand where you are coming from, I still disagree with your point of view.","The fact that the new government policy has not been implemented yet is causing a great deal of frustration among the public.","There isn't electricity but there is water,I have a blue car and I was in tamaco,I was eating burguers","I am learning english with my teacher tom in carmen street,I am 9 years old","I live in caracas and it is very pretty,I was living in zaraza","there aren't people in the parade because they are scared","we are learning with our teacher.his name is tom","Marta lives with her mom.She doesn't live with her dad","Marta works with her.they work in the clinic,they don't work in the morning","I didn't eat yesterday 'cause I wasn't hungry","there wasn't electricity in Martas's house last night","I am living alone,I am living with my family we are living on carmen street","juan's brother doesn't work in the mornings he works in the aftemoons","last night,I didn't want to eat because my wife cooked arepitas but I don't eat arepas because they have many carbonydrates.I ate eggs with hand cheese,and I drank a glass of water","Why were you watching the movie yesterday,there wasn't internet in my house","I wasn't with her,I was with ny brother and my friends","Are you learning english?","I want to learn chinense because it is a languaje very good","My name is carlos,I am 22 years old,my parents are maria and juan,I love my family","As he came into the window,Was the sound of a crescendo,He came into her apartment,He left,the bloodstains on the carpet,She ran underneath the table,He could see she was unable,So she ran into the bedroom,She was struck down, it was her doom","I was in the shcool last night,there was 1 student and 1 teacher"];
+
+    const randomNumber= Math.random();
+    const randomText= palabras[Math.floor(randomNumber * palabras.length)];
+    
+    numer.textContent= randomText;
+})
+
+</script>
+
+</body>
+</html>
